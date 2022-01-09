@@ -1,0 +1,19 @@
+// Minimum Increment to Make Array Unique
+
+  fun getMinimumUniqueSum(arr: List<Int>): Int {
+        var sum = 0
+        var element = 0
+        val arrayList = ArrayList<Int>(arr.size)
+        arrayList.add(arr[0])
+        for (i in 1 until arr.size) {
+            element = arr[i]
+            while (arrayList.contains(element)) {
+                element++
+            }
+            arrayList.add(element)
+        }
+        for (i in 0 until arrayList.size) {
+            sum += arrayList[i]
+        }
+        return sum
+    }
